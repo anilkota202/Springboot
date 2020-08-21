@@ -36,13 +36,14 @@ public class StudentController {
 	@GetMapping("/stfindid/{id}")
 	public Student stfind(@PathVariable("id") int id)
 	{
+		IPAdressTrack.getClientIp();
 		return studentrepo.findById(id);
 	}
 	
 	@PostMapping("/stsave")
 	public String stfind(@RequestBody Student st)
 	{
-		
+		IPAdressTrack.getClientIp();
 		studentrepo.saveAndFlush(st);
 
 		
